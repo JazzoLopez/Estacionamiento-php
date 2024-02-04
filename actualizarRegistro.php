@@ -1,6 +1,6 @@
 
 <?php
- include 'conexion.php';
+include 'conexion.php';
 $id_registro= $_POST['id_registro'];
 $query = "SELECT * FROM registro     WHERE id_registro='".$id_registro."'";
 $ejecutar = $conexion->query($query);
@@ -19,7 +19,7 @@ while($result=$ejecutar->fetch_array()){
                         <div class="col-lg-6">
                             <label for="id_vehiculo" class="form-label" required>Vehiculo:</label>
                             <select class="form-control" name="id_vehiculo" id="id_vehiculo">
-                            <option value="<?php echo $result['id_vehiculo']?>" select><?php echo $result['id_vehiculo']?></option>
+                            <option value="<?php echo $result['id_vehiculo']?>" ><?php echo $result['id_vehiculo']?></option>
 
                                 <?php
                                 include 'conexion.php';
@@ -32,9 +32,9 @@ while($result=$ejecutar->fetch_array()){
                             </select>
                         </div>
                         <div class="col-lg-6">
-                            <label for="id_cajon" class="form-label" required>Cajon :</label>
+                            <label for="id_cajon" class="form-label" >Cajon :</label>
                             <select class="form-control" name="id_cajon" id="id_cajon">
-                            <option value="<?php echo $result['id_cajon']?>" select><?php echo $result['id_cajon']?></option>
+                            <option value="<?php echo $result['id_cajon']?>" ><?php echo $result['id_cajon']?></option>
                                 <?php
                                 include 'conexion.php';
                                     $query = "SELECT id_cajon, numero FROM cajones";
