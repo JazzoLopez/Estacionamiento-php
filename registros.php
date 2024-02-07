@@ -27,7 +27,7 @@
                                 <option value="" select>- SELECCIONA -</option>
                                 <?php
                                 include 'conexion.php';
-                                    $query = "SELECT id_cajon, numero FROM cajones";
+                                    $query = "SELECT id_cajon, numero FROM cajones WHERE estatus = 0" ;
                                     $ejecutar = $conexion->query($query);
                                     while($resultado = $ejecutar->fetch_array()){
                                         echo "<option value='".$resultado['id_cajon']."'>".$resultado['numero']."</option>";

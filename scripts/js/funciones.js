@@ -285,7 +285,7 @@ function eliminarRegistro(id_registro) {
         if (result.trim() === "success") {
             Swal.fire({
                 icon: "warning",
-                title: "Cajon eliminado",
+                title: "Registro eliminado",
                 showConfirmButton: false,
                 timer: 1500
             })
@@ -549,4 +549,88 @@ function modificarEmpleado(id_empleado) {
         }
         loadDiv($("#contenido"), 'encargados.php')
     });
+}
+
+function registrarServo() {
+    var descripcion = $("#descripcion").val();
+    var grados = $("#grados").val();
+    var estatus = $("#estatus").val();
+
+    $.post("registrar/registrarServo.php", {
+        "descripcion": descripcion,
+        "grados": grados,
+        "estatus":estatus
+    }, function (respuesta) {
+        // Display an alert message based on the response from the server
+        if (respuesta.trim() === "success") {
+            Swal.fire({
+                icon: "success",
+                title: "Registro exitoso",
+                showConfirmButton: false,
+                timer: 1500
+            })
+        } else {
+            alert("Error al registrar");
+        }
+
+        $("#descripcion").val("");
+        $("#grados").val("");
+        $("#estatus").val("");
+        loadDiv($("#result"), 'consultarServo.php')
+    });
+}
+
+function actualizarServo(id_servomotor) {
+    $.post('actualizarServo.php', {    
+        "id_servomotor": id_servomotor
+    }, function (respuesta) {
+        contenido.innerHTML = respuesta
+    })
+}
+
+function modificarServo(id_servomotor) {
+
+    var descripcion = $("#descripcion").val();
+    var grados = $("#grados").val();
+    var estatus = $("#estatus").val();
+
+
+    $.post("actualizar/modificarServo.php", {
+        "id_servomotor":id_servomotor,
+        "descripcion": descripcion,
+        "grados": grados,
+        "estatus":estatus
+
+    },function (result) {
+        if (result.trim() === "success") {
+           alert('Actualizado correctamente');
+        }
+        else {
+            alert("Error al editar");
+        }
+        loadDiv($("#contenido"), 'servomotor.php')
+    });
+}
+
+function eliminarServo(id_servomotor) {
+    $.post("eliminar/eliminarServo.php", {
+
+        "id_servomotor": id_servomotor
+
+    }, function (result) {
+        if (result.trim() === "success") {
+            Swal.fire({
+                icon: "warning",
+                title: "Servo eliminado",
+                showConfirmButton: false,
+                timer: 1500
+            })
+        }
+        else {
+            alert("Error al eliminar");
+        }
+        loadDiv($("#result"), 'consultarServo.php')
+    })
+
+
 }

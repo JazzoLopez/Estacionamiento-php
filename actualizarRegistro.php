@@ -34,7 +34,7 @@ while($result=$ejecutar->fetch_array()){
                         <div class="col-lg-6">
                             <label for="id_cajon" class="form-label" >Cajon :</label>
                             <select class="form-control" name="id_cajon" id="id_cajon">
-                            <option value="<?php echo $result['id_cajon']?>" ><?php echo $result['id_cajon']?></option>
+                            <option value="<?php echo $result['id_cajon']?>"><?php echo $result['id_cajon']?></option>
                                 <?php
                                 include 'conexion.php';
                                     $query = "SELECT id_cajon, numero FROM cajones";
