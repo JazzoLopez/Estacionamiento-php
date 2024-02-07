@@ -413,7 +413,7 @@ function actualizarRegistro(id_registro) {
 }
 
 function actualizarTarifa(id_tarifa) {
-    $.post('actualizarTarifa.php', {    
+    $.post('actualizarTarifa.php', {
         "id_tarifa": id_tarifa
     }, function (respuesta) {
         contenido.innerHTML = respuesta
@@ -443,7 +443,7 @@ function modificarCliente(id_cliente) {
         "correo": correo
     }, function (result) {
         if (result.trim() === "success") {
-           alert('Actualizado correctamente');
+            alert('Actualizado correctamente');
         }
         else {
             alert("Error al eliminar");
@@ -461,7 +461,7 @@ function modificarVehiculo(id_vehiculo) {
     var id_cliente = $("#id_cliente").val();
 
     $.post("actualizar/modificarVehiculo.php", {
-        "id_vehiculo":id_vehiculo,
+        "id_vehiculo": id_vehiculo,
         "matricula": matricula,
         "modelo": modelo,
         "color": color,
@@ -469,9 +469,9 @@ function modificarVehiculo(id_vehiculo) {
         "tipo": tipo,
         "id_cliente": id_cliente
 
-    },function (result) {
+    }, function (result) {
         if (result.trim() === "success") {
-           alert('Actualizado correctamente');
+            alert('Actualizado correctamente');
         }
         else {
             alert("Error al eliminar");
@@ -486,12 +486,12 @@ function modificarTarifa(id_tarifa) {
     var monto = $("#monto").val();
 
     $.post("actualizar/modificarTarifa.php", {
-        "id_tarifa":id_tarifa,
+        "id_tarifa": id_tarifa,
         "tarifa": tarifa,
         "monto": monto
-    },function (result) {
+    }, function (result) {
         if (result.trim() === "success") {
-           alert('Actualizado correctamente');
+            alert('Actualizado correctamente');
         }
         else {
             alert("Error al eliminar");
@@ -508,14 +508,14 @@ function modificarRegistro(id_registro) {
 
 
     $.post("actualizar/modificarRegistro.php", {
-        "id_registro":id_registro,
+        "id_registro": id_registro,
         "id_vehiculo": id_vehiculo,
         "id_cajon": id_cajon,
         "id_tarifa": id_tarifa,
 
-    },function (result) {
+    }, function (result) {
         if (result.trim() === "success") {
-           alert('Actualizado correctamente');
+            alert('Actualizado correctamente');
         }
         else {
             alert("Error al editar");
@@ -533,16 +533,16 @@ function modificarEmpleado(id_empleado) {
     var contrasena = $("#contrasena").val();
 
     $.post("actualizar/modificarEmpleado.php", {
-        "id_empleado":id_empleado,
+        "id_empleado": id_empleado,
         "nombre": nombre,
         "direccion": direccion,
         "telefono": telefono,
         "correo": correo,
         "usuario": usuario,
         "contrasena": contrasena
-    },function (result) {
+    }, function (result) {
         if (result.trim() === "success") {
-           alert('Actualizado correctamente');
+            alert('Actualizado correctamente');
         }
         else {
             alert("Error al eliminar");
@@ -559,7 +559,7 @@ function registrarServo() {
     $.post("registrar/registrarServo.php", {
         "descripcion": descripcion,
         "grados": grados,
-        "estatus":estatus
+        "estatus": estatus
     }, function (respuesta) {
         // Display an alert message based on the response from the server
         if (respuesta.trim() === "success") {
@@ -572,7 +572,6 @@ function registrarServo() {
         } else {
             alert("Error al registrar");
         }
-
         $("#descripcion").val("");
         $("#grados").val("");
         $("#estatus").val("");
@@ -581,7 +580,7 @@ function registrarServo() {
 }
 
 function actualizarServo(id_servomotor) {
-    $.post('actualizarServo.php', {    
+    $.post('actualizarServo.php', {
         "id_servomotor": id_servomotor
     }, function (respuesta) {
         contenido.innerHTML = respuesta
@@ -596,14 +595,14 @@ function modificarServo(id_servomotor) {
 
 
     $.post("actualizar/modificarServo.php", {
-        "id_servomotor":id_servomotor,
+        "id_servomotor": id_servomotor,
         "descripcion": descripcion,
         "grados": grados,
-        "estatus":estatus
+        "estatus": estatus
 
-    },function (result) {
+    }, function (result) {
         if (result.trim() === "success") {
-           alert('Actualizado correctamente');
+            alert('Actualizado correctamente');
         }
         else {
             alert("Error al editar");
@@ -631,6 +630,13 @@ function eliminarServo(id_servomotor) {
         }
         loadDiv($("#result"), 'consultarServo.php')
     })
+}
 
+function abrirModal(id_cajon) {
+    $("#modalPromociones").modal("show");
+    $("#id_cajon").val(id_cajon);
+}
 
+function cerrarModal() {
+    $("#modalPromociones").modal("hide");
 }

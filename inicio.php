@@ -34,33 +34,3 @@ while($result=$ejecutar->fetch_array()){
 echo "</div></div></div>" ;
 }
 ?>
-
-
-<div class="modal" id="myModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <!-- Cabecera del Modal -->
-      <div class="modal-header">
-        <h4 class="modal-title">Formulario</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
-      <!-- Contenido del Modal -->
-      <div class="modal-body">
-        <!-- Formulario -->
-        <form id="miFormulario">
-          <div class="form-group">
-            <label for="campo1">Campo 1:</label>
-            <input type="text" class="form-control" id="campo1" name="campo1" required>
-          </div>
-          <!-- Agrega más campos según sea necesario -->
-
-          <!-- Botones Guardar y Cancelar -->
-          <button type="button" class="btn btn-primary" onclick="guardarDatos()">Guardar</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
