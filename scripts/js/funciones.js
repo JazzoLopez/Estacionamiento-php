@@ -220,6 +220,27 @@ function registrarTarifa() {
         loadDiv($("#result"), 'consultarTarifa.php')
     });
 }
+function actualizarRegistroSalida(id_registro){
+    $.post("actualizar/actualizaRegistro2.php", {
+
+        "id_registro": id_registro
+
+    }, function (result) {
+        if (result.trim() === "success") {
+            Swal.fire({
+                icon: "warning",
+                title: "Registro eliminado",
+                showConfirmButton: false,
+                timer: 1500
+            })
+        }
+        else {
+            alert("Error al eliminar");
+        }
+        loadDiv($("#result"), 'consultarRegistros.php')
+    })
+
+}
 
 function registrarRegistro() {
 
@@ -247,11 +268,7 @@ function registrarRegistro() {
             alert("Error al registrar");
         }
 
-
-        $("#id_vehiculo").val("");
-        $("#id_cajon").val("");
-        $("#id_tarifa").val("");
-        loadDiv($("#result"), 'consultarRegistros.php')
+        loadDiv($("#result"), 'inicio.php')
     });
 }
 //*</REGISTRAR > */
