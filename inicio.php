@@ -17,7 +17,7 @@ while($result=$ejecutar->fetch_array()){
         vehiculos.id_vehiculo = registro.id_vehiculo INNER JOIN cajones ON 
         cajones.id_cajon = registro.id_cajon INNER JOIN tarifa ON 
         tarifa.id_tarifa = registro.id_tarifa INNER JOIN empleados ON
-         empleados.id_empleado = registro.id_empleado WHERE registro.id_cajon = ".$result['id_cajon']."";
+         empleados.id_empleado = registro.id_empleado WHERE registro.id_cajon = ".$result['id_cajon']." AND fechaSalidad  IS NULL AND horaSalida IS NULL";
          $ejecutar2 = $conexion->query($query2);
          while($result2 = $ejecutar2->fetch_array()){
             echo "<h4>Matricula:".$result2['matricula']."</h4>";

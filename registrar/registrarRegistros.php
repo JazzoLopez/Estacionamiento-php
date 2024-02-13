@@ -1,4 +1,4 @@
-<?php
+<?php                                    
 include '../conexion.php';
 session_start();
 $id_empleado=$_SESSION['id'];
@@ -8,7 +8,7 @@ $id_tarifa = $_POST['id_tarifa'];
 date_default_timezone_set('America/Mexico_City');           
 $fechaIngreso = date("Y-m-d");
 $horaIngreso = date("H:i:s");
-
+    
 
 
 
