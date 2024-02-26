@@ -3,7 +3,7 @@
 
 <?php
 include 'conexion.php';
-$query = "SELECT id_cajon, numero, estatus FROM cajones ORDER BY numero";
+$query = "SELECT * FROM cajones ORDER BY numero";
 $ejecutar =  $conexion->query($query);
 echo "<div class='row'>";
 while($result=$ejecutar->fetch_array()){
@@ -27,17 +27,21 @@ while($result=$ejecutar->fetch_array()){
             echo "<a href='#' class='btn btn-warning' onclick='actualizarRegistroSalida(".$result2['id_registro'].")'>Salida</a>";
             
          }
+         if($result["ocupado"]==true){
+            echo "<img src='imagenes/prohibido.png' style='height:50px'>";
+         }
+         else{
+            echo "<img src='imagenes/comprobado.png' style='height:50px'>";
+          }
     }
     else{
         echo "<p class='card-text'>No existe un vehiculo ocupando este cajon</p>";
         
         echo "<a href='#' class='btn btn-info' data-toggle='modal' data-target='#myModal' onclick='abrirModal(".$result['id_cajon'].")' >Ocupar</a>";
-        if($result["estatus"]==0){
-          echo "<img src='imagenes/prohibido.png' style='height:50px'>";
-        }
-        if($result["estatus"]==1){
+        if($result["ocupado"]==false){
           echo "<img src='imagenes/comprobado.png' style='height:50px'>";
         }
+
     }
 echo "</div></div></div>" ;
 }

@@ -21,6 +21,7 @@ if (!isset($_SESSION['loggedin'])) {
   <link href="css/estilos.css" rel="stylesheet">
   <script src="scripts/js/funciones.js"></script>
   <script src="scripts/js/jquery.min.js"></script>
+  <script>setInterval("location.reload()", 30000);</script>
   <script src="scripts/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -56,7 +57,7 @@ if (!isset($_SESSION['loggedin'])) {
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#" onclick="loadDiv('#contenido','clientes.php');">Clientes</a>
-            </li>
+            </li> 
             <li class="nav-item">
               <a class="nav-link" href="#" onclick="loadDiv('#contenido','vehiculos.php');">Vehiculos</a>
             </li>
@@ -65,6 +66,9 @@ if (!isset($_SESSION['loggedin'])) {
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#" onclick="loadDiv('#contenido','servomotor.php');">Servomotor</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="loadDiv('#contenido','proximidad.php');">Proximidad</a>
             </li>
             <li class="nav-item">
               <span class="nav-link">|</span>

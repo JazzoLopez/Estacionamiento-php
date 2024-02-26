@@ -22,5 +22,5 @@ $conexion->close();
 
 ?>
 
-
-//id, descripcion, grados estatus
+<!-- 
+//id, descripcion, grados estatus -FDSBIFSDUHUFDSUH9SFHU9FSDHUFDSHU9FSHUFDSI VFOIOIDSFDNO>

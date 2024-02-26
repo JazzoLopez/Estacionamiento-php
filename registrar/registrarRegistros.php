@@ -16,7 +16,9 @@ $stmt = $conexion->prepare("INSERT INTO registro (id_vehiculo, id_cajon,fechaIng
 $stmt->bind_param("ssssss", $id_vehiculo, $id_cajon, $fechaIngreso, $horaIngreso, $id_empleado, $id_tarifa);
 
 $stmt2 = $conexion->prepare("UPDATE cajones SET estatus = 1 WHERE id_cajon = ?");
+
 $stmt2->bind_param("s", $id_cajon);
+
 $result2 = $stmt2->execute();
 $result = $stmt->execute();
 

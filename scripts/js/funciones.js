@@ -657,3 +657,28 @@ function abrirModal(id_cajon) {
 function cerrarModal() {
     $("#modalPromociones").modal("hide");
 }
+
+function registrarProximidad(){
+    var descripcion = $("#descripcion").val();
+    var estatus = $("#estatus").val();
+
+    $.post("registrar/registrarProximidad.php", {
+        "descripcion": descripcion,
+        "estatus": estatus
+    }, function (respuesta) {
+        // Display an alert message based on the response from the server
+        if (respuesta.trim() === "success") {
+            Swal.fire({
+                icon: "success",
+                title: "Registro exitoso",
+                showConfirmButton: false,
+                timer: 1500
+            })
+        } else {
+            alert("Error al registrar");
+        }
+        $("#descripcion").val("");
+        $("#estatus").val("");
+        loadDiv($("#result"), 'consultarServo.php')
+    });
+}
