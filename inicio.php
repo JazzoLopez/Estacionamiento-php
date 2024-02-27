@@ -41,6 +41,9 @@ while($result=$ejecutar->fetch_array()){
         if($result["ocupado"]==false){
           echo "<img src='imagenes/comprobado.png' style='height:50px'>";
         }
+        else{
+            echo "<img src='imagenes/prohibido.png' style='height:50px'>";
+        }
 
     }
 echo "</div></div></div>" ;

@@ -71,6 +71,9 @@ if (!isset($_SESSION['loggedin'])) {
               <a class="nav-link" href="#" onclick="loadDiv('#contenido','proximidad.php');">Proximidad</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="#" onclick="loadDiv('#contenido','humedad.php');">Humedad y temperatura</a>
+            </li>
+            <li class="nav-item">
               <span class="nav-link">|</span>
             </li>
             <li class="nav-item dropdown">
