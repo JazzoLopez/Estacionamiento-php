@@ -1,11 +1,13 @@
 <?php
 
 include '../conexion.php';
-$id_tarifa = $_POST['id_tarifa'];
-$tarifa = $_POST['tarifa'];
-$monto = $_POST['monto'];
+$estatus = $_GET['estatus'];
+date_default_timezone_set('America/Mexico_City');           
+$fechasalida = date("Y-m-d");  
+$horasalida = date("H:i:s");
+$id = "SELECT id FROM fotoresistencia ORDER BY id DESC LIMIT 1";
 
-$stmt =$conexion->prepare( "UPDATE tarifa SET tarifa = '".$tarifa."', monto = '".$monto."' WHERE id_tarifa ='".$id_tarifa."'");
+$stmt =$conexion->prepare( "UPDATE fotoresistencia SET estatus = '".$estatus."', fechaApagado = '".$fechasalida."', horaApagado='".$horasalida."' WHERE id ='".$id."'");
 $result = $stmt->execute();
 if ($result) {
     echo "success";
