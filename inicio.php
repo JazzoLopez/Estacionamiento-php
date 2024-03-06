@@ -1,8 +1,21 @@
+<?php
+            include 'conexion.php';
 
-<h1>Dashboard</h1>
+            $query="SELECT * FROM humedad ORDER BY id DESC LIMIT 1";
+            $data=$conexion->query($query);
+            $dataTemp=$data->fetch_array();
+?>
+<h4 style="padding-bottom: 10px; padding-top:10px">bienvenido la temperatura de hoy es de: <?php echo $dataTemp['temperatura'];?>º  y la humedad actual esta en: <?php echo $dataTemp['humedad'];?>%  | Estatus de la luz: <?php
+    $query="SELECT * FROM fotoresistencia ORDER BY id DESC LIMIT 1";
+    $dataLigth=$conexion->query($query);
+    $dataVerify=$dataLigth->fetch_array();
+    echo $dataVerify['estatus'] ? "<img src='imagenes/Encendido.png' style='height:40px'>" : "<img src='imagenes/Apagado.png' style='height:40px'>" ;
+?></h4>
+    
+
 
 <?php
-include 'conexion.php';
+
 $query = "SELECT * FROM cajones ORDER BY numero";
 $ejecutar =  $conexion->query($query);
 echo "<div class='row'>";
