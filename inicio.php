@@ -5,7 +5,7 @@
             $data=$conexion->query($query);
             $dataTemp=$data->fetch_array();
 ?>
-<h4 style="padding-bottom: 10px; padding-top:10px">bienvenido la temperatura de hoy es de: <?php echo $dataTemp['temperatura'];?>º  y la humedad actual esta en: <?php echo $dataTemp['humedad'];?>%  | Estatus de la luz: <?php
+<h4 style="padding-bottom: 10px; padding-top:10px">bienvenido la temperatura de hoy es de: <b><?php echo $dataTemp['temperatura'];?>º </b> y la humedad actual esta en: <b><?php echo $dataTemp['humedad'];?>% </b> | Estatus de la luz: <?php
     $query="SELECT * FROM fotoresistencia ORDER BY id DESC LIMIT 1";
     $dataLigth=$conexion->query($query);
     $dataVerify=$dataLigth->fetch_array();

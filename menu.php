@@ -64,29 +64,31 @@ if (!isset($_SESSION['loggedin'])) {
             <li class="nav-item">
               <a class="nav-link" href="#" onclick="loadDiv('#contenido','tarifas.php');">Tarifas</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" onclick="loadDiv('#contenido','servomotor.php');">Servomotor</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" onclick="loadDiv('#contenido','proximidad.php');">Proximidad</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" onclick="loadDiv('#contenido','humedad.php');">Humedad y temperatura</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" onclick="loadDiv('#contenido','fotoresistencia.php');">fotoresistencia</a>
-            </li>
+            <li><a class="nav-link" href="#" onclick="loadDiv('#contenido','encargados.php');">encargados</a></li>
+                <li><a class="nav-link"  href="#" onclick="loadDiv('#contenido','reportes.php');">Reportes</a></li>
+            
             <li class="nav-item">
               <span class="nav-link">|</span>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                 data-bs-toggle="dropdown" aria-expanded="false">
-                Otros
+                Sensores
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="#" onclick="loadDiv('#contenido','encargados.php');">encargados</a></li>
-                <li><a class="dropdown-item" href="#" onclick="loadDiv('#contenido','reportes.php');">Reportes</a></li>
+              
+                <li class="nav-item">
+              <a class="dropdown-item"  href="#" onclick="loadDiv('#contenido','servomotor.php');">Servomotor</a>
+            </li>
+            <li class="nav-item">
+              <a class="dropdown-item"  href="#" onclick="loadDiv('#contenido','proximidad.php');">Proximidad</a>
+            </li>
+            <li class="nav-item">
+              <a class="dropdown-item"  href="#" onclick="loadDiv('#contenido','humedad.php');">Humedad y temperatura</a>
+            </li>
+            <li class="nav-item">
+              <a class="dropdown-item"  href="#" onclick="loadDiv('#contenido','fotoresistencia.php');">fotoresistencia</a>
+            </li>
                 <li><a class="dropdown-item" href="#" onclick="closeSession ();">Salir</a></li>
 
               </ul>
